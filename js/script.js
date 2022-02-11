@@ -60,24 +60,22 @@ $(document).ready(function () {
   });
 
   //validate form
-  (function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let forms = document.querySelectorAll(".needs-validation")
+  // (function () {
+  //   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  //   let forms = document.querySelectorAll(".needs-validation")
 
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener("submit", function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          } else {
-            event.preventDefault()
-          }
-          form.classList.add("was-validated")
-        }, false)
-      })
-  })();
+  //   // Loop over them and prevent submission
+  //   Array.prototype.slice.call(forms)
+  //     .forEach(function (form) {
+  //       form.addEventListener("submit", function (event) {
+  //         if (!form.checkValidity()) {
+  //           event.preventDefault()
+  //           event.stopPropagation()
+  //         }
+  //         form.classList.add("was-validated")
+  //       }, false)
+  //     })
+  // })();
 
   //lazyload images
   $("img").Lazy({

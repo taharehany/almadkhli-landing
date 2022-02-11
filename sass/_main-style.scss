@@ -29,7 +29,7 @@ header {
 	}
 
 	.middle-part {
-		padding: 6px 0;
+		padding: 25px 0;
 		background-color: #fff;
 		@include transition(all linear 0.3s);
 
@@ -56,13 +56,13 @@ header {
 						display: inline-block;
 						text-align: center;
 						font-size: 32px;
-						color: $main_color;
+						color: #00578F;
 						@include transition(all ease 0.3s);
 					}
 
 					.text {
 						h4 {
-							color: $main_color;
+							color: #00578F;
 							text-transform: capitalize;
 							font-size: 16px;
 						}
@@ -81,7 +81,7 @@ header {
 				margin: 0;
 
 				img {
-					width: 25rem;
+					width: 20rem;
 				}
 			}
 		}
@@ -90,7 +90,7 @@ header {
 	.navbar {
 		padding: 0;
 		position: fixed;
-		top: 123px;
+		top: 108px;
 		width: 100%;
 		@include transition(top linear 0.2s);
 
@@ -129,7 +129,7 @@ header {
 				&:hover,
 				&.active {
 					.nav-link {
-						color: $main_color;
+						color: #fff;
 
 						&::after {
 							width: 100%;
@@ -138,7 +138,7 @@ header {
 				}
 
 				&:not(:hover) {
-					color: #058100;
+					color: $main_color;
 				}
 
 				&:last-child {
@@ -155,7 +155,7 @@ header {
 					&::after {
 						content: "";
 						position: absolute;
-						background-color: $main_color;
+						background-color: #fff;
 						height: 2px;
 						left: 0;
 						bottom: 22px;
@@ -252,7 +252,7 @@ header {
 			height: 100%;
 
 			.btn {
-				line-height: 4.2;
+				line-height: 4.1;
 				border: none;
 				outline: none;
 				display: inline-block;
@@ -492,7 +492,7 @@ section.main-slider {
 			}
 
 			p {
-				color: $second_color;
+				color: #000;
 				font-size: 20px;
 				line-height: 1.5;
 				margin-bottom: 25px;
@@ -911,7 +911,7 @@ section.contact {
 					border-color: #f3f3f3;
 
 					&:focus {
-						border-color: $dark_color;
+						border-color: $main_color;
 						box-shadow: none;
 					}
 				}
@@ -973,7 +973,7 @@ footer {
 
 				.footer-logo {
 					img {
-						max-width: 250px;
+						max-width: 350px;
 					}
 				}
 
@@ -1066,7 +1066,7 @@ footer {
 
 					i {
 						margin-inline-end: 10px;
-						color: $main_color;
+						color: #fff;
 					}
 				}
 

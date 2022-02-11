@@ -31,7 +31,7 @@
          <div class="middle-part">
             <div class="container">
                <div class="middle-part-content">
-                  <div class="box"><a class="brand" href="index.html"> <img class="img-fluid" data-src="images/logo.png" alt=""></a></div>
+                  <div class="box"><a class="brand" href="/"> <img class="img-fluid" data-src="images/logo-footer.png" alt=""></a></div>
                   <div class="box">
                      <div class="info phone">
                         <div class="icon"><i class="bi bi-telephone"> </i></div>
@@ -64,9 +64,9 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                      <ul class="navbar-nav">
                         <li class="nav-item active"><a class="nav-link" aria-current="page" href="/">الرئيسية</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">الخدمات</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#about">من نحن</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#services">الخدمات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#contact">تواصل معنا</a></li>
                      </ul>
                   </div>
                </div>
@@ -79,13 +79,13 @@
                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas" data-bs-target="#side_menu" aria-controls="side_menu" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-               <div class="navbar"><a class="brand" href="index.html"> <img class="img-fluid" data-src="images/logo.png" alt=""></a>
+               <div class="navbar"><a class="brand" href="/"> <img class="img-fluid" data-src="images/logo.png" alt=""></a>
                   <div class="collapsed navbar-collapse" id="navbarNavSide">
                      <ul class="navbar-nav">
                         <li class="nav-item active"><a class="nav-link" aria-current="page" href="/">الرئيسية</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">الخدمات</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#about">من نحن</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#services">الخدمات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#contact">تواصل معنا</a></li>
                      </ul>
                   </div>
                </div>
@@ -95,7 +95,6 @@
       <!--header-->
       <style>
          body {
-            text-align: center;
             height: auto;
          }
 
@@ -107,9 +106,8 @@
             /* color: #000; */
          }
 
-         header .navbar {
-            box-shadow: 0 4px 10px 0 rgb(115 115 115 / 5%), 0 7px 10px -5px rgb(126 126 126 / 5%);
-            background-color: #34508a;
+         header .middle-part {
+            background: #f3f3f3;
          }
 
          header .navbar .navbar-collapse {
@@ -130,8 +128,8 @@
             justify-content: center
          }
 
-         h3 {
-            line-height: 2;
+         .main h3 {
+            line-height: 1.5;
             text-align: center;
             direction: rtl;
             padding-top: 50px;
@@ -149,24 +147,27 @@
       <main class="main">
          <div class="container">
             <h3> 
-               <?php
-                  $email = "ryhanytaha@gmail.com";
+            <?php
+                  $email = "info@almadkhli.com";
                   if (!empty($_POST)) {
                      if (empty($_POST['name']) or empty($_POST['phone']) or empty($_POST['email']) or empty($_POST['message'])) {
                         echo ("تأكد من ملئ جميع الحقول!");
                      } else {
-                        $message  = "name :\n{$_POST["name"]}\n";
-                        $message .= "number :\n{$_POST["phone"]}\n";
-                        $message .= "email :\n{$_POST["email"]}\n";
-                        $message .= "message :\n{$_POST["message"]}\n";
+                        $message  = "الاسم :\n{$_POST["name"]}\n";
+                        $message .= "الهاتف :\n{$_POST["phone"]}\n";
+                        $message .= "البريد الإلكتروني :\n{$_POST["email"]}\n";
+                        $message .= "الرسالة :\n{$_POST["message"]}\n";
                         $message .= "IP :\n{$_SERVER['REMOTE_ADDR']}\n";
                         $message = stripslashes($message);
-                        $message = wordwrap($message, 70);
-                        mail($email, "Qaswarah", $message, "From: {$_POST["name"]} <{$_POST["email"]}>");
-                        echo ("تم إرسال رسالتك بنجاح وسيتم التواصل معك في أقرب وقت، شكرا لك :(");
+                        $message = wordwrap($message, 100);
+                           $headers = "Content-Type: text/plain; charset=UTF-8\r\n" . 'X-Mailer: PHP/' . phpversion();
+
+                        $headers  .= "From: {$_POST["name"]} <{$_POST["email"]}>";
+                        mail($email, "Almadkhli Landing Form", $message, $headers);
+                        echo ("شكرا لتواصلكم مع مكتب المدخلي ( محامون ومستشارون قانونيون) سيتم التواصل معكم في أقرب وقت ممكن");
                      }
                   }
-                  ?> 
+                  ?>
                </h3>
          </div>
       </main>
@@ -179,7 +180,7 @@
                <div class="row">
                   <div class="col-lg-5 col-md-6">
                      <div class="footer-box">
-                        <div class="text"><a class="footer-logo" href="index.html"> <img class="img-fluid mb-4" data-src="images/logo.png" alt=""></a>
+                        <div class="text"><a class="footer-logo" href="/"> <img class="img-fluid mb-4" data-src="images/logo-footer.png" alt=""></a>
                            <p>يقدم مكتب المدخلي (محامون ومستشارون قانونيون) خدمات قانونية سريعة وفعالة للعملاء ولديه نهج استباقي وإيجابي نحو إيجاد حلول جذرية للمشكلات القانونية عند ظهورها. يتمتع كل عضو من أعضاء فريق العمل المحترف بخبرة وتعمق كبيرين وفق منهجيات قانونية راسخة في كافة المجالات وذلك عبر سجل حافل بالإنجازات في المهام التي تم إسنادها إليهم. يلتزم المكتب بإيجاد الحلول القانونية التي تحقق نتائج ملموسة وفعالة من حيث التكلفة لعملائه.</p>
                         </div>
                      </div>
@@ -188,16 +189,16 @@
                      <div class="footer-box">
                         <h3>روابط سريعة</h3>
                         <ul class="map-links">
-                           <li><a href="#!">الرئيسية</a></li>
-                           <li><a href="about.html">من نحن</a></li>
-                           <li><a href="services.html">الخدمات</a></li>
-                           <li><a href="contact.html">تواصل معنا</a></li>
+                           <li><a href="/">الرئيسية</a></li>
+                           <li><a href="http://almadkhli.com/#about">من نحن</a></li>
+                           <li><a href="http://almadkhli.com/#services">الخدمات</a></li>
+                           <li><a href="http://almadkhli.com/#contact">تواصل معنا</a></li>
                         </ul>
                      </div>
                   </div>
                   <div class="col-lg-4">
                      <div class="footer-box">
-                        <h3>معلومات التواصل</h3>
+                        <h3>اتصل بنا</h3>
                         <div class="contact">
                            <p> <i class="bi bi-pin-map"></i>عمارة التورن، شارع زيادة القرطبي، حي الملز، الرياض</p>
                            <p> <i class="bi bi-telephone"></i><a dir="ltr" href="tel:+9660118101008">+9660118101008</a></p>
@@ -226,6 +227,19 @@
    <script src="js/wow.min.js"></script>
    <script src="js/script.js"></script>
    <!-- GetButton.io widget-->
+   <script type="text/javascript">
+      (function () {
+      var options = {
+      whatsapp: "+966505241940", // WhatsApp number
+      call_to_action: "واتساب", // Call to action
+      position: "left", // Position may be 'right' or 'left'
+      };
+      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+    </script>
    <!-- /GetButton.io widget-->
 </body>
 
