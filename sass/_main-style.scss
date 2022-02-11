@@ -26,6 +26,10 @@ header {
 			top: 0;
 			background-color: $second_color;
 		}
+		.navbar-brand {
+			visibility: visible !important;
+			display: inline-block !important;
+		}
 	}
 
 	.middle-part {
@@ -116,6 +120,12 @@ header {
 				outline: none;
 				box-shadow: none
 			}
+		}
+
+		.navbar-brand {
+			padding-inline-end: 50px;
+			visibility: hidden;
+			display: none;
 		}
 
 		.navbar-nav {
