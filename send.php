@@ -61,7 +61,7 @@
                      </button>
                      <div class="login"><a class="btn" href="#contact">راسلنا الآن <i class="bi bi-arrow-left-circle"></i></a></div>
                   </div>
-                  <div class="collapse navbar-collapse" id="navbarNav">
+                  <div class="collapse navbar-collapse" id="navbarNav"><a class="navbar-brand" href="index.html"> <img class="img-fluid" data-src="images/logo-footer.png" alt="المدخلي"></a>
                      <ul class="navbar-nav">
                         <li class="nav-item active"><a class="nav-link" aria-current="page" href="/">الرئيسية</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://almadkhli.com/#about">من نحن</a></li>
@@ -79,7 +79,7 @@
                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas" data-bs-target="#side_menu" aria-controls="side_menu" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-               <div class="navbar"><a class="brand" href="/"> <img class="img-fluid" data-src="images/logo.png" alt=""></a>
+               <div class="navbar"><a class="brand" href="/"> <img class="img-fluid" data-src="images/logo-footer.png" alt=""></a>
                   <div class="collapsed navbar-collapse" id="navbarNavSide">
                      <ul class="navbar-nav">
                         <li class="nav-item active"><a class="nav-link" aria-current="page" href="/">الرئيسية</a></li>
@@ -142,33 +142,33 @@
          bottom: 0;
       } */
       </style>
-      
+
       <!-- main -->
       <main class="main">
          <div class="container">
-            <h3> 
-            <?php
-                  $email = "info@almadkhli.com";
-                  if (!empty($_POST)) {
-                     if (empty($_POST['name']) or empty($_POST['phone']) or empty($_POST['email']) or empty($_POST['message'])) {
-                        echo ("تأكد من ملئ جميع الحقول!");
-                     } else {
-                        $message  = "الاسم :\n{$_POST["name"]}\n";
-                        $message .= "الهاتف :\n{$_POST["phone"]}\n";
-                        $message .= "البريد الإلكتروني :\n{$_POST["email"]}\n";
-                        $message .= "الرسالة :\n{$_POST["message"]}\n";
-                        $message .= "IP :\n{$_SERVER['REMOTE_ADDR']}\n";
-                        $message = stripslashes($message);
-                        $message = wordwrap($message, 100);
-                           $headers = "Content-Type: text/plain; charset=UTF-8\r\n" . 'X-Mailer: PHP/' . phpversion();
+            <h3>
+               <?php
+               $email = "info@almadkhli.com";
+               if (!empty($_POST)) {
+                  if (empty($_POST['name']) or empty($_POST['phone']) or empty($_POST['email']) or empty($_POST['message'])) {
+                     echo ("تأكد من ملئ جميع الحقول!");
+                  } else {
+                     $message  = "الاسم :\n{$_POST["name"]}\n";
+                     $message .= "الهاتف :\n{$_POST["phone"]}\n";
+                     $message .= "البريد الإلكتروني :\n{$_POST["email"]}\n";
+                     $message .= "الرسالة :\n{$_POST["message"]}\n";
+                     $message .= "IP :\n{$_SERVER['REMOTE_ADDR']}\n";
+                     $message = stripslashes($message);
+                     $message = wordwrap($message, 100);
+                     $headers = "Content-Type: text/plain; charset=UTF-8\r\n" . 'X-Mailer: PHP/' . phpversion();
 
-                        $headers  .= "From: {$_POST["name"]} <{$_POST["email"]}>";
-                        mail($email, "Almadkhli Landing Form", $message, $headers);
-                        echo ("شكرا لتواصلكم مع مكتب المدخلي ( محامون ومستشارون قانونيون) سيتم التواصل معكم في أقرب وقت ممكن");
-                     }
+                     $headers  .= "From: {$_POST["name"]} <{$_POST["email"]}>";
+                     mail($email, "Almadkhli Landing Form", $message, $headers);
+                     echo ("شكرا لتواصلكم مع مكتب المدخلي ( محامون ومستشارون قانونيون) سيتم التواصل معكم في أقرب وقت ممكن");
                   }
-                  ?>
-               </h3>
+               }
+               ?>
+            </h3>
          </div>
       </main>
       <!-- main -->
@@ -228,18 +228,26 @@
    <script src="js/script.js"></script>
    <!-- GetButton.io widget-->
    <script type="text/javascript">
-      (function () {
-      var options = {
-      whatsapp: "+966505241940", // WhatsApp number
-      call_to_action: "واتساب", // Call to action
-      position: "left", // Position may be 'right' or 'left'
-      };
-      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      (function() {
+         var options = {
+            whatsapp: "+966505241940", // WhatsApp number
+            call_to_action: "واتساب", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+         };
+         var proto = document.location.protocol,
+            host = "getbutton.io",
+            url = proto + "//static." + host;
+         var s = document.createElement('script');
+         s.type = 'text/javascript';
+         s.async = true;
+         s.src = url + '/widget-send-button/js/init.js';
+         s.onload = function() {
+            WhWidgetSendButton.init(host, proto, options);
+         };
+         var x = document.getElementsByTagName('script')[0];
+         x.parentNode.insertBefore(s, x);
       })();
-    </script>
+   </script>
    <!-- /GetButton.io widget-->
 </body>
 
